@@ -4,6 +4,8 @@ A Bcrypt hash generator & checker
 
 https://it.wikipedia.org/wiki/Bcrypt
 
+![Node.js CI](https://github.com/heply/fastify-bcrypt/workflows/Node.js%20CI/badge.svg?branch=master)
+
 ## Install
 
 ```bash
