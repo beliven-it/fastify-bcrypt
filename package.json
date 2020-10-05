@@ -1,6 +1,6 @@
 {
   "name": "fastify-bcrypt",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "A Bcrypt hash generator & checker",
   "main": "bcrypt.js",
   "scripts": {
@@ -36,7 +36,6 @@
   },
   "dependencies": {
     "bcryptjs": "^2.4.3",
-    "fastify-error": "^0.2.0",
     "fastify-plugin": "^2.3.1"
   }
 }
