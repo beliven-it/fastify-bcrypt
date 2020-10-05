@@ -63,10 +63,11 @@ test('fastify-bcrypt', async t => {
     const fastify = await buildApp(t)
     try {
       await fastify.register(require('../bcrypt'))
-      await fastify.bcrypt.compare('password123', pwdHash)
-      t.fail('should throw an error')
+      const match = await fastify.bcrypt.compare('password123', pwdHash)
+      t.equal(match, false, 'should return false')
     } catch (err) {
-      t.true(err, 'should throw an error')
+      console.log(err)
+      t.error(err, 'should not throw any error')
     }
   })
 
@@ -75,8 +76,8 @@ test('fastify-bcrypt', async t => {
     const fastify = await buildApp(t)
     try {
       await fastify.register(require('../bcrypt'))
-      await fastify.bcrypt.compare('password', pwdHash)
-      t.true(1, 'should not throw any error')
+      const match = await fastify.bcrypt.compare('password', pwdHash)
+      t.equal(match, true, 'should return true')
     } catch (err) {
       console.log(err)
       t.error(err, 'should not throw any error')
