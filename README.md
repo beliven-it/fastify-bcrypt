@@ -21,7 +21,7 @@ fastify.register(require('fastify-bcrypt'), {
 
 fastify.bcrypt.hash('password')
   .then(hash => fastify.bcrypt.compare('password', hash))
-  .then(() => console.log('Matched!'))
+  .then(match => console.log(match ? 'Matched!' : 'Not matched!'))
   .catch(err => console.error(err.message))
 })
 
