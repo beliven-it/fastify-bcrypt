@@ -15,6 +15,8 @@ module.exports = fp(function (fastify, opts, next) {
       hash,
       compare
     })
+    .decorateRequest('bcryptHash', hash)
+    .decorateRequest('bcryptCompare', compare)
 
   next()
 })
