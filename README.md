@@ -34,6 +34,20 @@ fastify.bcrypt.hash('password')
 |--------------------|-----------------------------------------------------------------------------|
 | `saltWorkFactor`   | The salt work factor for the `bcrypt` algorithm. The default value is `10`. |
 
+## Methods
+
+| Name                            | Description                                |
+|---------------------------------|--------------------------------------------|
+| `hash (claim) [async]`          | Generate an hash of given `claim`.         |
+| `compare (claim, hash) [async]` | Compare an hashed `claim` with `hash`. **NOTE:** they're not reversible! |
+
+## Request
+
+| Name                                  | Description                          |
+|---------------------------------------|--------------------------------------|
+| `bcryptHash (claim) [async]`          | See `hash`.                          |
+| `bcryptCompare (claim, hash) [async]` | See `compare`.                       |
+
 ## Test
 
 ```bash
