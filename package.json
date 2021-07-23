@@ -3,6 +3,7 @@
   "version": "0.1.1",
   "description": "A Bcrypt hash generator & checker",
   "main": "bcrypt.js",
+  "types": "bcrypt.d.ts",
   "scripts": {
     "test": "npx tap -Rspec --coverage test/**/*.test.js && tsd"
   },
