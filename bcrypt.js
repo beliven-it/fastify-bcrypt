@@ -3,7 +3,7 @@
 const fp = require('fastify-plugin')
 const bcrypt = require('bcryptjs')
 
-module.exports = fp(function (fastify, opts, next) {
+const fastifyBcrypt = fp(function (fastify, opts, next) {
   const saltWorkFactor = opts.saltWorkFactor || 10
 
   const hash = async pwd => bcrypt.hash(pwd, saltWorkFactor)
@@ -20,3 +20,7 @@ module.exports = fp(function (fastify, opts, next) {
 
   next()
 })
+
+module.exports = fastifyBcrypt
+module.exports.default = fastifyBcrypt
+module.exports.fastifyBcrypt = fastifyBcrypt
