@@ -3,8 +3,9 @@
   "version": "0.1.1",
   "description": "A Bcrypt hash generator & checker",
   "main": "bcrypt.js",
+  "types": "bcrypt.d.ts",
   "scripts": {
-    "test": "npx tap -Rspec --coverage test/**/*.test.js"
+    "test": "npx tap -Rspec --coverage test/**/*.test.js && tsd"
   },
   "repository": {
     "type": "git",
@@ -25,6 +26,7 @@
   },
   "homepage": "https://github.com/heply/fastify-bcrypt#readme",
   "devDependencies": {
+    "@types/node": "^16.4.1",
     "eslint": "^7.7.0",
     "eslint-config-standard": "^14.1.1",
     "eslint-plugin-import": "^2.22.0",
@@ -32,10 +34,14 @@
     "eslint-plugin-promise": "^4.2.1",
     "eslint-plugin-standard": "^4.0.1",
     "fastify": "^3.2.1",
-    "tap": "^14.10.8"
+    "tap": "^14.10.8",
+    "tsd": "^0.17.0"
   },
   "dependencies": {
     "bcryptjs": "^2.4.3",
     "fastify-plugin": "^2.3.1"
+  },
+  "tsd": {
+    "directory": "test"
   }
 }
