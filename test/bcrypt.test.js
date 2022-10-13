@@ -12,7 +12,7 @@ const buildApp = async t => {
     }
   })
 
-  t.tearDown(() => fastify.close())
+  t.teardown(() => fastify.close())
 
   return fastify
 }
@@ -23,7 +23,7 @@ test('fastify-bcrypt', async t => {
     const fastify = await buildApp(t)
     try {
       await fastify.register(require('../bcrypt'))
-      t.true('bcrypt' in fastify, 'should not throw any error')
+      t.ok('bcrypt' in fastify, 'should not throw any error')
     } catch (err) {
       console.log(err)
       t.error(err, 'should not throw any error')
@@ -37,7 +37,7 @@ test('fastify-bcrypt', async t => {
       await fastify.register(require('../bcrypt'), {
         saltWorkFactor: 8
       })
-      t.true('bcrypt' in fastify, 'should not throw any error')
+      t.ok('bcrypt' in fastify, 'should not throw any error')
     } catch (err) {
       console.log(err)
       t.error(err, 'should not throw any error')
@@ -51,7 +51,7 @@ test('fastify-bcrypt', async t => {
       await fastify.register(require('../bcrypt'))
       const hash = await fastify.bcrypt.hash('password')
       t.equal(typeof hash, 'string', 'should generate a hash')
-      t.notEqual(hash, 'password', 'should generate a hash')
+      t.not(hash, 'password', 'should generate a hash')
     } catch (err) {
       console.log(err)
       t.error(err, 'should not throw any error')

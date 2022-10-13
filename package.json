@@ -34,7 +34,7 @@
     "eslint-plugin-promise": "^4.2.1",
     "eslint-plugin-standard": "^4.0.1",
     "fastify": "^3.2.1",
-    "tap": "^14.10.8",
+    "tap": "^16.0.0",
     "tsd": "^0.17.0"
   },
   "dependencies": {
@@ -43,5 +43,8 @@
   },
   "tsd": {
     "directory": "test"
+  },
+  "tap": {
+    "check-coverage": false
   }
 }
