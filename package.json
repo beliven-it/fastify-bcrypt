@@ -1,6 +1,6 @@
 {
   "name": "fastify-bcrypt",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A Bcrypt hash generator & checker",
   "main": "bcrypt.js",
   "types": "bcrypt.d.ts",
